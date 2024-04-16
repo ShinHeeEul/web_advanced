@@ -77,20 +77,7 @@ main {
 }
 
 /* Section title styles */
-section h2 {
-    font-size: 2.5em;
-    margin-bottom: .5em; /* Add a little space below the section titles */
-}
 
-section h3 {
-    font-size: 1.5em;
-    margin-bottom: .3em;
-}
-
-section h4 {
-    font-size: 1.2em;
-    margin-bottom: .2em;
-}
 
 /* Tech Stack Section */
 .tech-stack {
