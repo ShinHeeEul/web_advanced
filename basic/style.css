@@ -1,0 +1,195 @@
+/* General styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #fff; /* Set the background color for the body */
+    color: #333; /* Set the base text color */
+    line-height: 1.6;
+}
+
+/* Header styles */
+header {
+    padding: 20px 0; /* Add some padding to give some height to the header */
+    border-bottom: 2px solid #dee2e6; /* A subtle border to distinguish the header from the content */
+}
+
+.nav2>ul li {
+    float: left;
+    padding: 0.5rem;
+    line-height: 30px;
+  }
+  
+  .nav2>a {
+    display: block; /* a태그는 글자성격 = inline */
+    float: left;
+    font-size: 30px;
+    font-weight: 900;
+    line-height: 60px;
+  }
+
+  .nav2>ul{
+    float: right;
+    list-style: none;
+    padding: 0;
+}
+
+ul li{
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+ul li label{
+    cursor: pointer;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto; /* Center the navigation within the header */
+    padding: 0 15px;
+}
+
+header nav img.logo {
+    height: 60px;
+}
+
+header nav ul {
+    display: flex;
+    gap: 15px; /* Give some space between the menu items */
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #007bff; /* A blue color for links */
+    font-size: 1.1em;
+}
+
+header nav ul li a:hover {
+    color: #0056b3; /* A darker blue on hover */
+}
+
+/* Main content styles */
+main {
+    max-width: 1200px;
+    margin: 40px auto; /* Center the main content on the page */
+    padding: 0 15px;
+}
+
+/* Section title styles */
+section h2 {
+    font-size: 2.5em;
+    margin-bottom: .5em; /* Add a little space below the section titles */
+}
+
+section h3 {
+    font-size: 1.5em;
+    margin-bottom: .3em;
+}
+
+section h4 {
+    font-size: 1.2em;
+    margin-bottom: .2em;
+}
+
+/* Tech Stack Section */
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; /* Space between tech stack items */
+    justify-content: center; /* Center tech stack items */
+    margin-bottom: 40px; /* Space before the next section */
+}
+
+.tech-stack img {
+    width: 60px; /* Slightly larger icons for the tech stack */
+    height: 60px;
+    transition: transform .2s; /* Smooth transformation on hover */
+}
+
+.tech-stack img:hover {
+    transform: scale(1.1); /* Make the icons grow a bit when hovered */
+}
+
+/* Project Section */
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px; /* Space before the next section */
+}
+
+.project-card {
+    background-color: #f8f9fa; /* Same as header background for consistency */
+    padding: 20px;
+    border-radius: 8px; /* Rounded corners for the project cards */
+    width: fit-content;
+    height: fit-content;
+    box-shadow: 0 2px 4px rgba(0,0,0,.1); /* A light shadow for depth */
+}
+
+.project-card img {
+    width: auto;
+    height: auto;
+    border-radius: 8px; /* Match the border radius of the card */
+    margin-bottom: 15px;
+}
+
+/* Footer styles */
+footer {
+    color: #adb5bd; /* A lighter text color for contrast */
+    padding: 20px 0; /* Add some vertical padding */
+}
+
+footer nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto; /* Center the footer content */
+    padding: 0 15px;
+}
+
+footer nav ul {
+    display: flex;
+    gap: 15px;
+}
+
+footer nav ul li {
+    list-style: none;
+}
+
+footer nav ul li a {
+    color: #adb5bd; /* Same as footer text color */
+    text-decoration: none;
+}
+
+footer nav ul li a:hover {
+    color: #fff; /* White on hover for better visibility */
+}
+
+footer nav img.footer-logo {
+    height: 40px;
+}
+
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+    header nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .tech-stack {
+        justify-content: space-around;
+    }
+
+    .projects {
+        grid-template-columns: 1fr; /* Stack the projects on smaller screens */
+    }
+
+    footer nav {
+        flex-direction: column;
+        text-align: center;
+    }
+}
