@@ -28,4 +28,4 @@ jobs:
           aws s3 cp \
             --recursive \
             --region ap-northeast-2 \
-            basic/ s3://shinheeeul-portfolio
+            basic s3://shinheeeul-portfolio
