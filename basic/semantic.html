@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./reset.css">
     <link rel="stylesheet" href="./style.css">
     <title>포트폴리오</title>
 </head>
@@ -127,37 +128,33 @@
         
     </section>
     </div>
-    <!-- aside : 사이드바 -->
 
     <!-- footer : -->
-    <footer id="footer" style="border-top: 2px solid #dee2e6;">
-        <nav style="display:flex; justify-content: space-between;">
-                <!-- unordered list (순서가 없는 리스트) -->
-                <img width="100" src="./footer.svg">
-                <div style="display: flex;">
-                    <ul>
-                        <li>010-0000-0000</li>
-                        <li>sheshe7015@naver.com</li>
-                        <li><a href="https://www.github.com/ShinHeeEul"><img width="30" src="https://simpleicons.org/icons/github.svg" target="_blank"></img></a></li>
-                        <li><a href="https://cookielong.tistory.com"><img width="30" src="https://simpleicons.org/icons/tistory.svg" target="_blank"></img></a></li>
-                        <li><a href="https://www.instagram.com/ShinHeeEul/"><img width="30" src="https://simpleicons.org/icons/instagram.svg" target="_blank"></img></a></li>       
-                    </ul>
-                </div>
-        </nav>
-        <div>
-        <nav style="float:left">
-            <div style="padding: 0 4rem;">
-            <ul>
-                <li><a href="#">Home</a></li> <!-- 링크 -->
-                <li><a href="#info">About</a></li>
-                <li><a href="#tech">Tech Stack</a></li>
-                <li><a href="#project">Projects</a></li>
-                <li><a href="#footer">Contacts</a></li>
-            </ul>
+    <footer>
+        <div class="footer-upper">
+          <!-- 로고 -->
+          <img class="footer-logo" src="./footer.svg" alt="logo" />
+          <!-- 이메일/연락처/SNS -->
+          <div class="footer-content">
+            <div class="footer-contact">
+              <a href="tel:+1234567890">010-1234-5678</a>
+              <a href="mailto:sheshe7015@naver.com">sheshe7015@naver.com</a>
+              <div class="footer-links">
+                <a href="https://www.github.com/ShinHeeEul"><img width="30" src="https://simpleicons.org/icons/github.svg" target="_blank"></img></a>
+                <a href="https://cookielong.tistory.com"><img width="30" src="https://simpleicons.org/icons/tistory.svg" target="_blank"></img></a>
+                <a href="https://www.instagram.com/ShinHeeEul/"><img width="30" src="https://simpleicons.org/icons/instagram.svg" target="_blank"></img></a>
+              </div>
             </div>
-            
-        </nav>
-    </div>
-    </footer>
+          </div>
+        </div>
+        <!-- 가로 선 -->
+        <div class="hr"></div>
+        <div class="madeby">
+          Designed and built by Pavan <span>MG</span>
+          with <span>Love</span> & <span>Coffee</span>
+          &copy; 2024
+        </div>
+      </footer>
+    
 </body>
 </html>
