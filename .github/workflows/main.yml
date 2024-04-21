@@ -1,9 +1,8 @@
-name: Deploy To S3
+name: Deploy To S3 <-working
 
 on:
   push:
-    branches: [ main ]
-  # 수동으로도 깃허브에서 배포할 수 있는 명렁어??
+    branches: [main]
   workflow_dispatch:
 
 jobs:
@@ -11,21 +10,25 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: checkout v2
+      - name: Checkout v2
         uses: actions/checkout@v2
 
-      - name: Deploy To s3
+      - name: Delete all files in S3
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-
-# aws s3 cp: AWS CLI의 S3 명령어 중 하나로, 파일을 S3로 복사합니다.
-# --recursive: 이 옵션은 지정한 디렉토리의 하위 디렉토리 및 파일을 모두 포함하여 재귀적으로 복사합니다.
-# --region ap-northeast-2: 이 옵션은 목적지 S3 버킷이 있는 AWS 리전을 지정합니다. 여기서는 아시아 태평양 (서울) 리전을 나타냅니다.
-# build: 로컬에서 복사할 디렉토리입니다. 여기서는 './basic' 디렉토리에 있는 파일 및 하위 디렉토리를 S3로 복사합니다.(로컬)
-# s3://shinheeeul-portfolio: 복사할 대상 S3 버킷의 경로입니다. 여기서는 'shinheeeul-portfolio'라는 버킷에 파일이 복사됩니다 (S3위치)
         run: |
-          aws s3 cp \
-            --recursive \
-            --region ap-northeast-2 \
-            basic s3://shinheeeul-portfolio/basic
+          aws s3 rm s3://shinheeeul-portfolio --recursive --region ap-northeast-2
+
+      - name: Deploy To S3
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        run: |
+          aws s3 cp --recursive --region ap-northeast-2 ./ s3://shinheeeul-portfolio/basic
+      - name: Invalidate CloudFront Distribution
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: ap-northeast-2
+        run: aws cloudfront create-invalidation --distribution-id E26CF2GONHNAWL --paths "/*"
